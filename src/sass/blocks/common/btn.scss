@@ -1,0 +1,31 @@
+.btn{
+    display: inline-block;
+    width: 100%;
+    padding-block-end: 10px 15px;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    background: $green;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $oswald;
+    transition: 0.3s;
+
+}
+
+.btn--small{
+    font-size: 14px;
+
+    @include tablet{
+        font-size: 20px;
+        width: auto;
+        padding: 16px 27px;
+    }
+}
+
+.questionnaire__btn{
+    font-size: 20px;
+    padding: 16px;
+}

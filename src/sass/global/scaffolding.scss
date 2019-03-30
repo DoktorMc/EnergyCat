@@ -1,0 +1,123 @@
+@import "vars.scss";
+@import "mixins.scss";
+
+html,
+body {
+  font-family: $oswald, $arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  box-sizing: border-box;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  border-style: none;
+  max-height: 100%;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+li {
+  @include reset-list();
+}
+
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: $mobile-pads;
+  padding-right: $mobile-pads;
+
+  @include tablet {
+    max-width: 100%;
+    padding-left: $tablet-pads;
+    padding-right: $tablet-pads;
+  }
+
+  @include desktop {
+    max-width: 1300px;
+    padding-left: $desktop-pads;
+    padding-right: $desktop-pads;
+  }
+}
+
+.container--ident{
+  @include desktop_laptop {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+.visually-hidden,
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 400;
+}
+
+textarea,
+input,
+button {
+  font-size: 100%;
+}
+
+fieldset{
+  border: none;
+}
+
+[type="radio"], [type="checkbox"]{
+  box-sizing: border-box;
+  padding: 0;
+}
+

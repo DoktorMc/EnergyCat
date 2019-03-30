@@ -1,0 +1,75 @@
+// @import "../../global/vars.scss";
+.navigation {
+  display: none;
+  width: 100%;
+  margin-bottom: -13px;
+  margin-top: 13px;
+
+  @include tablet{
+      display: block;
+      margin: 0;
+      width: auto;
+  }
+}
+
+.navigation__list {
+  // display: none;
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include desktop {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.navigation__link {
+  display: block;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  font-family: $oswald;
+  color: $black;
+  transition: 0.3s;
+  margin-left: -$mobile-pads;
+  margin-right: -$mobile-pads;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @include tablet {
+    margin: 0 18px;
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 1.38;
+
+    &--active {
+      border-bottom: 2px solid $green;
+    }
+  }
+
+  @include desktop {
+    font-size: 20px;
+    // line-height: 1.24;
+  }
+}
+
+@include desktop {
+  .navigation__list--index .navigation__link {
+    color: #ffffff;
+
+    &--active {
+      border-bottom-color: #ffffff;
+    }
+  }
+}

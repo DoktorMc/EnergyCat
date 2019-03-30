@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- <link rel="preload" href="./build/css/normalize.css" as="style" /> -->
+    <link rel="preload" href="./build/css/main.css" as="style" />
+    <link rel="preload" href="./build/fonts/oswaldregular.woff2" as="font" />
+    <link rel="preload" href="./build/fonts/oswaldmedium.woff2" as="font" />
+    <!-- <link rel="stylesheet" href="./build/css/normalize.css" /> -->
+    <link rel="stylesheet" href="./build/css/main.css" />
+    <title>Energy Cat</title>
+  </head>
+  <body>
+		<header class="header-page">
+      <div class="container">
+        <div class="header-page__container">
+          <a class="header-page__logo">
+            <picture>
+              <source
+                media="(min-width: 1300px)"
+                srcset="./build/img/vector/logo-desktop.svg"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="./build/img/vector/logo-tablet.svg"
+              />
+              <img
+                class="header-page__logo-img"
+                src="./build/img/vector/logo-mobile.svg"
+                alt="Логотип Cat Energy"
+              />
+            </picture>
+          </a>
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="/index.html" class="navigation__link"
+                  >главная</a
+                >
+              </li>
+              <li class="navigation__item">
+                <a href="/catalog.html" class="navigation__link"
+                  >каталог продукции</a
+                >
+              </li>
+              <li class="navigation__item">
+                <a href="/form.html" class="navigation__link navigation__link--active"
+                  >подбор программы</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		
+		<main class="overflow">
+			<div class="container container--ident">
+				<h1 class="title">Подбор программы</h1>
+				<p class="title-description">Заполните анкету и мы подберем  программу питания для вашего кота</p>
+				<form action="#" class="questionnaire" method="POST">
+					<div class="questionnaire__row">
+						<div class="questionnaire__col">
+							<fieldset class="questionnaire__fieldset">
+								<label class="form-field">
+									<span class="form-field__text">Имя:*</span>
+									<input type="text" class="form-field__control" placeholder="БАРСИК" required>
+								</label>
+								<label class="form-field">
+										<span class="form-field__text">Вес (кг):*</span>
+										<input type="text" class="form-field__control" placeholder="7" required>
+								</label>
+								<label class="form-field">
+										<span class="form-field__text">Возраст (лет):</span>
+										<input type="text" class="form-field__control" placeholder="7">
+								</label>
+							</fieldset>
+						</div>
+						<div class="questionnaire__col">
+								<fieldset class="questionnaire__fieldset questionnaire__fieldset--border">
+								
+									<label class="form-type form-type--radio" for="radio-1">
+											<input type="radio" name="choice" id="radio-1" checked>
+											<span class="form-type--label"></span>
+										Похудение
+									</label>
+									
+									<label class="form-type form-type--radio" for="radio-2">
+											<input type="radio" name="choice" id="radio-2" >
+											<span class="form-type--label"></span>
+										Набор массы</label>
+									
+									<label class="form-type form-type--radio" for="radio-3">
+											<input type="radio" name="choice" id="radio-3" >
+											<span class="form-type--label"></span>
+										Не знаю (Нужен ваш совет)
+									</label>
+								</fieldset>
+						</div>
+					</div>
+
+					<fieldset class="questionnaire__fieldset">
+						<h3 class="title-line title-line--width">Контакная данные (владельца кота)</h3>
+						<div class="questionnaire__row">
+							<div class="questionnaire__col">
+								<label class="form-field">
+									<span class="form-field__text">E-mail:*</span>
+									<input class="form-field__control form-field__control--icon" type="email" placeholder="kuklachev@dmail.com" required>
+									<svg class="form-field__icon" width="18" height="20">
+										<use xlink:href="./build/img/vector/sprite/svg/sprite.symbol.svg#icon-mail"></use>
+									</svg>
+								</label>
+							</div>
+							<div class="questionnaire__col">
+								<label class="form-field">
+									<span class="form-field__text">Телефон:*</span>
+									<input class="form-field__control form-field__control--icon" type="email" placeholder="8(960)900-60-90" required>
+									<svg class="form-field__icon"  width="20" height="20">
+										<use xlink:href="./build/img/vector/sprite/svg/sprite.symbol.svg#icon-phone"></use>
+									</svg>
+								</label>
+							</div>
+						</div>
+					</fieldset>
+					<div class="questionnaire__fieldset">
+						<label class="title-line title-line--ident" for="for-textarea">Комментарий</label>
+						<textarea class="questionnaire__textarea" id="for-textarea" rows="8" placeholder="Расскажите обо всех повадках кота"></textarea>
+					</div>
+					<fieldset class="questionnaire__fieldset">
+						<h3 class="title-line title-line--ident">Дополнительно</h3>
+						<div class="questionnaire__row">
+							<div class="questionnaire__col questionnaire__col--w25 promoted-checkbox">
+								<input type="checkbox" id="check-1" checked>
+								<label for="check-1" class="form-type">
+										<svg>
+												<use xlink:href="./build/img/vector/checkmark.svg#checkmark"></use>
+										</svg>
+									Сахарозаменитель
+								</label>
+							</div>
+							<div class="questionnaire__col questionnaire__col--w25 promoted-checkbox">
+								<input type="checkbox" id="check-2">
+								<label for="check-2" class="form-type">
+										<svg>
+												<use xlink:href="./build/img/vector/checkmark.svg#checkmark"></use>
+										</svg>
+									Питьевая вода
+								</label>
+							</div>
+							<div class="questionnaire__col questionnaire__col--w25 promoted-checkbox">
+								<input type="checkbox" id="check-3">
+								<label for="check-3" class="form-type">
+										<svg>
+												<use xlink:href="./build/img/vector/checkmark.svg#checkmark"></use>
+										</svg>
+									Молоко
+								</label>
+							</div>
+							<div class="questionnaire__col questionnaire__col--w25 promoted-checkbox">
+									<input type="checkbox" id="check-4">
+								<label for="check-4" class="form-type">
+										<svg>
+												<use xlink:href="./build/img/vector/checkmark.svg#checkmark"></use>
+										</svg>
+									Витамины
+								</label>
+							</div>
+						</div>
+					</fieldset>
+					<div class="questionnaire__row">
+						<div class="questionnaire__col questionnaire__col--w50">
+							<button type="submit" class="btn questionnaire__btn">Отправить заявку</button>
+						</div>
+						<div class="questionnaire__col questionnaire__col--w50">
+							<p class="questionnaire__text">
+								<sup>*</sup>
+								 - Обязательные поля
+							</p>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+			<div class="map">
+				<iframe
+					width="100%"
+					height="440px"
+					src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D1%81%D0%B0+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
+					frameborder="0"
+					scrolling="no"
+					marginheight="0"
+					marginwidth="0"
+				>
+				</iframe>
+			</div>
+		</main>
+
+	<footer class="footer-page">
+		<div class="container">
+			<div class="footer-page__row">
+				<div class="footer-page__col">
+					<a href="" class="footer-logo">
+						<img
+							src="./build/img/vector/sprite/logo-footer.svg"
+							width="135px"
+							height="24px"
+							alt="логотип"
+						/>
+					</a>
+				</div>
+				<div class="footer-page__col">
+					<ul class="social">
+						<li class="social__item">
+							<a href="#" class="social__link">
+								<svg
+									class="social__icon social__icon--vk"
+									width="22px"
+									height="16px"
+								>
+									<use
+										xlink:href="./build/img/vector/sprite/svg/sprite.symbol.svg#icon-vk-mobile"
+									></use>
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link">
+								<svg
+									class="social__icon social__icon--insta"
+									width="22px"
+									height="16px"
+								>
+									<use
+										xlink:href="./build/img/vector/sprite/svg/sprite.symbol.svg#icon-insta-mobile"
+									></use>
+								</svg>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link">
+								<svg
+									class="social__icon social__icon--fb"
+									width="22px"
+									height="16px"
+								>
+									<use
+										xlink:href="./build/img/vector/sprite/svg/sprite.symbol.svg#icon-fb-mobile"
+									></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-page__col">
+					<a href="" class="developer">
+						<span class="developer__name">HTML Academy</span>
+						<svg class="developer__icon" width="40px" height="40px">
+							<use
+								xlink:href="./build/img/vector/sprite/svg/sprite.symbol.svg#logo-htmlacademy"
+							></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

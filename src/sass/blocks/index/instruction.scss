@@ -1,0 +1,154 @@
+.title{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+    font-family: $oswald;
+    color: $black;
+    margin-bottom: 40px;
+    margin-top: 0;
+    padding-top: 28px;
+
+    @include tablet{
+        margin-bottom: 55px;
+        padding-top: 55px;
+        font-size: 60px;
+    }
+
+    @include desktop{
+        padding-top: 20px;
+        margin-bottom: 57px;
+    }
+}
+
+.title--main{
+
+    @include tablet{
+    padding-top: 43px;
+    margin-bottom: 70px;
+    }
+}
+
+.instruction__list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$mobile-pads;
+    margin-right: -$mobile-pads;
+    counter-reset: section;
+    margin-bottom: 23px;
+
+    @include tablet{
+        margin-left: -$tablet-pads;
+        margin-right: -$tablet-pads;
+        margin-bottom: 9px;
+    }
+
+    @include desktop{
+        margin-left: -$desktop-pads;
+        margin-right: -$desktop-pads;
+    }
+}
+
+.instruction__item{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: $mobile-pads;
+    padding-right: $mobile-pads;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: $mobile-pads;
+
+    @include tablet{
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: block;
+        min-height: 230px;
+        padding-left: $tablet-pads;
+        padding-right: $tablet-pads;
+        margin-bottom: $tablet-pads;
+    }
+
+    @include desktop{
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding-left: $desktop-pads;
+        padding-right: $desktop-pads;
+        margin-bottom: $desktop-pads;
+    }
+
+    &::before{
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        margin-right: $mobile-pads;
+        width: 60px;
+        height: 60px;
+        background-color: $green;
+        background-size: 50px;
+
+        @include tablet{
+            width: 80px;
+            height: 80px;
+            margin-bottom: 35px;
+        }
+    }
+
+    &::after{
+        @include desktop{
+            left: 155px;
+        }
+
+        @include tablet{
+            left: 155px;
+            counter-increment: section;
+            content: counter(section)"";
+            position: absolute;
+            top: -38px;
+            font-size: 280px;
+            line-height: 1;
+            font-family: $oswald;
+            color: $grey;
+            z-index: -1;
+        }
+    }
+}
+
+.instruction__item--leaf{
+    &::before{
+        background-image: url(/build/img/raster/advantage-leaf@2x.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.instruction__item--powder{
+    &::before{
+        background-image: url(/build/img/raster/advantage-powder@2x.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.instruction__item--dining{
+    &::before{
+        background-image: url(/build/img/raster/advantage-dining@2x.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.instruction__item--clock{
+    &::before{
+        background-image: url(/build/img/raster/advantage-clock@2x.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.instruction__text{
+    margin: 0;
+    font-family: $arial;
+}

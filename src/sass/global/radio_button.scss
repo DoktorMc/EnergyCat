@@ -1,0 +1,42 @@
+.form-type--label{
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    border-radius: 100%;
+    -webkit-tap-highlight-color: transparent;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 18px;
+      height: 18px;
+      border-radius: 100%;
+      background: #68b738;
+      transform: scale(0);
+      transition: all .2s ease;
+      opacity: .08;
+      pointer-events: none;
+    }
+    
+    &:hover{
+      &:after{
+        transform: scale(3.4);
+      }
+    }
+    
+}
+
+input[type="radio"]:checked + .form-type--label{
+  &:after{
+    transform: scale(1);
+    transition: all .2s cubic-bezier(.35,.9,.4,.9);
+    opacity: 1;
+  }
+}
+

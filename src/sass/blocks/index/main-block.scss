@@ -1,0 +1,80 @@
+.main-block{
+    position: relative;
+    text-align: center;
+    padding-top: 27px;
+    margin-bottom: 20px;
+
+    @include tablet{
+        padding-left: 90px;
+        padding-top: 55px;
+        margin-bottom: 5px;
+        min-height: 400px;
+        text-align: left;
+    }
+
+    @include desktop{
+        min-height: 530px;
+        padding-top: 55px;
+        padding-left: 80px;
+        margin-bottom: 80px;
+    }
+}
+
+.main-block__title{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+    font-family: $oswald;
+    color: #ffffff;
+    margin-bottom: 23px;
+    margin-top: 0;
+
+    @include tablet{
+        max-width: 520px;
+        margin-bottom: 45px;
+        text-align: left;
+        color: #111111;
+        font-size: 60px;
+    }
+
+}
+
+.main-block__tagline{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $oswald;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    margin-top: 0;
+
+    @include tablet{
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 45px;
+        color: #111111;
+    }
+}
+
+.main-block__product{
+    display: block;
+    margin: 0 auto 5px;
+
+    @include tablet{
+        position: absolute;
+        top: 25px;
+        left: 65%;
+        bottom: inherit;
+        margin: auto;
+    }
+
+    @include desktop{
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        bottom: inherit;
+        margin: auto;
+        transform: translateX(-29%);
+    }
+}
+

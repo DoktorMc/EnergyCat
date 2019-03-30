@@ -1,0 +1,342 @@
+.questionnaire {
+  margin-bottom: 10px;
+
+  @include tablet {
+    margin-bottom: 75px;
+  }
+
+  @include desktop {
+    margin-bottom: 80px;
+  }
+}
+
+.title-description {
+  font-family: $oswald;
+  text-transform: uppercase;
+  max-width: 270px;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 35px;
+
+  @include tablet {
+    max-width: 330px;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 65px;
+  }
+}
+
+.questionnaire__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$mobile-pads;
+  margin-right: -$mobile-pads;
+
+  @include tablet {
+    margin-left: -$tablet-pads;
+    margin-right: -$tablet-pads;
+  }
+
+  @include desktop {
+    margin-left: -$desktop-pads;
+    margin-right: -$desktop-pads;
+  }
+}
+
+.questionnaire__col {
+  flex: 0 0 100%;
+  padding-left: $mobile-pads;
+  padding-right: $mobile-pads;
+  max-width: 100%;
+
+  @include tablet {
+    padding-left: $tablet-pads;
+    padding-right: $tablet-pads;
+  }
+
+  @include desktop {
+    flex: 0 0 50%;
+    padding-left: $desktop-pads;
+    padding-right: $desktop-pads;
+    max-width: 50%;
+  }
+}
+
+.questionnaire__fieldset {
+  position: relative;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 27px;
+
+  @include tablet {
+    margin-bottom: 70px;
+  }
+
+  @include desktop {
+    margin-bottom: 62px;
+  }
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+
+  @include tablet {
+    margin-bottom: 22px;
+  }
+}
+
+.form-field__text {
+  text-transform: uppercase;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-right: 18px;
+  color: #222222;
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+.form-field__control {
+  font-family: $oswald;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 13px 15px;
+  width: 100%;
+  color: $darkgrey;
+  border: 1px solid #e6e6e6;
+  transition: 0.3s;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 20px;
+  }
+
+  &:hover {
+    border: 1px solid #d8d8d8;
+  }
+
+  &:active,
+  &:focus {
+    outline: 2px solid #444444;
+    &:invalid {
+      outline: 2px solid #ff8282;
+      & ~ svg {
+        fill: #ff8282;
+      }
+    }
+  }
+}
+
+.questionnaire__fieldset input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+.questionnaire__fieldset--border {
+  margin-left: -$mobile-pads;
+  margin-right: -$mobile-pads;
+  padding: 15px 20px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+
+  @include tablet {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px 20px;
+    border: 1px solid #e6e6e6;
+  }
+}
+
+.form-type {
+  font-family: $oswald;
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #222222;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 0;
+  }
+}
+
+.form-type--radio {
+  margin: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.title-line {
+  font-family: $oswald;
+  font-size: 24px;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  padding-right: 22px;
+  padding-left: 40px;
+  margin-left: -40px;
+  margin-bottom: 35px;
+  background: #ffffff;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    margin-top: 2px;
+    height: 3px;
+    background: #68b738;
+    z-index: -1;
+  }
+
+  &:after {
+    left: 20px;
+  }
+
+  &:before {
+    right: 0;
+  }
+
+  @include tablet {
+    font-size: 36px;
+    padding-right: 40px;
+    margin-bottom: 75px;
+  }
+
+  &--width {
+    margin-right: 125px;
+
+    &:after {
+      top: 30%;
+    }
+
+    @include tablet {
+      margin-right: 0;
+
+      &:after {
+        top: 50%;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &--ident {
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 55px;
+    }
+  }
+}
+
+.form-field__control--icon {
+  background-size: 18px 20px;
+  padding: 13px 45px 13px 15px;
+
+  @include tablet {
+    padding: 10px 45px 10px 20px;
+  }
+}
+
+.form-field__icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.questionnaire__textarea {
+  width: 100%;
+  max-width: 100%;
+  font-family: $oswald;
+  font-size: 16px;
+  height: 174px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  padding: 18px 19px;
+  border: 1px solid #e6e6e6;
+
+  @include tablet {
+    font-size: 20px;
+    padding: 10px 18px;
+    line-height: 30px;
+  }
+
+  &:active,
+  &:focus {
+    outline: 1px solid #444444;
+  }
+}
+
+.questionnaire__col--w25 {
+  @include tablet {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: $tablet-pads;
+    padding-right: $tablet-pads;
+    text-align: left;
+  }
+
+  @include desktop {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-left: $desktop-pads;
+    padding-right: $desktop-pads;
+  }
+}
+
+.questionnaire__col--w50 {
+  @include tablet {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: $tablet-pads;
+    padding-right: $tablet-pads;
+  }
+
+  @include desktop {
+    padding-left: $desktop-pads;
+    padding-right: $desktop-pads;
+  }
+}
+
+.questionnaire__text {
+  text-align: center;
+  font-family: $arial;
+
+  @include tablet {
+    margin: 13px 0;
+    text-align: left;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #cacaca;
+}
+::-moz-placeholder {
+  color: #cacaca;
+}
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+:focus::-moz-placeholder {
+  color: transparent;
+}
