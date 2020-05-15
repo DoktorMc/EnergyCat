@@ -1,9 +1,6 @@
-// @import "../../global/vars.scss";
+
 .navigation {
-  display: none;
-  width: 100%;
-  margin-bottom: -13px;
-  margin-top: 13px;
+  
 
   @include tablet{
       display: block;
@@ -63,6 +60,7 @@
     // line-height: 1.24;
   }
 }
+
 
 @include desktop {
   .navigation__list--index .navigation__link {

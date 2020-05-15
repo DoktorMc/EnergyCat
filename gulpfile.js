@@ -5,6 +5,7 @@ const browserSync = require("browser-sync").create();
 const cleanCss = require("gulp-clean-css");
 const svgSprite = require("gulp-svg-sprite");
 const rimraf = require("rimraf");
+const uglify = require('gulp-uglify');
 
 const config = {
   svgSprite: {

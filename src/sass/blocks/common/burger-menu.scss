@@ -1,0 +1,189 @@
+@mixin transition {
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}) {
+      transition: transform 1s #{$i * 0.08}s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+    }
+  }
+}
+
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
+
+$text: #ffffff;
+$main: #68b738;
+$contrast: darken($main, 10%);
+
+.navigation {
+  @include mobile{
+    position: fixed;
+    z-index: 99999;
+    right: 0;
+    top: 82px;
+    width: 100vw;
+    transform: translate(100vw, 0);
+    /* ie workaround */
+    -ms-transform: translatex(-100vw);
+    box-sizing: border-box;
+    pointer-events: none;
+    padding-top: 20px;
+    transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
+    border-bottom-left-radius: 100vw;
+    @include alpha-attribute('background-color', rgba($contrast, 0.95), white);
+   
+    .navigation__list {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      overflow-x: hidden;
+      pointer-events: auto;
+    }
+    li {
+      list-style: none;
+      text-transform: uppercase;
+      pointer-events: auto;
+      white-space: nowrap;
+      box-sizing: border-box;
+      transform: translatex(100vw);
+      /* ie workaround */
+      -ms-transform: translatex(-100vw);
+      &:last-child {
+        margin-bottom: 2em;
+      }
+      a {
+        text-decoration: none;
+        color: $text;
+        text-align: center;
+        display: block;
+        padding: 1rem;
+        font-size: calc(24px - .5vw);
+        @media (min-width: 768px) {
+          text-align: right;
+          padding: .5rem;
+        }
+        &:hover {
+          cursor: pointer;
+          @include alpha-attribute('background-color', rgba($main, 0.5), white);
+        }
+      }
+    }
+  }
+}
+
+
+  input.hamburger {
+    display: none;
+    &:checked {
+      & ~ .navigation {
+        transform: translatex(0);
+        border-bottom-left-radius: 0;
+        li {
+          transform: translatex(0);
+          @include transition;
+          a {
+            padding-right: 15px;
+          }
+        }
+      }
+      & ~ label {
+        > i {
+          background-color: transparent;
+          transform: rotate(90deg);
+          &:before {
+            transform: translate(-50%, -50%) rotate(315deg);
+          }
+          &:after {
+            transform: translate(-50%, -50%) rotate(-315deg);
+          }
+        }
+        close {
+          color: #000000;
+          width: 100%;
+        }
+        open {
+          color: #ffffff;
+          width: 0;
+        }
+      }
+    }
+  }
+
+  label.hamburger {
+    z-index: 9999;
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 50px;
+    &:hover {
+      cursor: pointer;
+    }
+    text {
+      close,
+      open {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        align-text: center;
+        position: absolute;
+        transform: translateY(50px);
+        text-align: center;
+        overflow: hidden;
+        transition: width 0.25s 0.35s, color 0.45s 0.35s;
+      }
+      close {
+        color: #ffffff;
+        right: 0;
+        width: 0;
+      }
+      open {
+        color: #000000;
+        width: 100%;
+      }
+      
+    }
+    > i {
+      position: absolute;
+      width: 75%;
+      height: 2px;
+      top: 50%;
+      left: 15%;
+      background-color: #000000;
+      pointer-events: auto;
+      transition-duration: 0.35s;
+      transition-delay: 0.35s;
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        left: 50%;
+        background-color: #000000;
+        content: "";
+        transition: transform 0.35s;
+        transform-origin: 50% 50%;
+      }
+      &:before {
+        transform: translate(-50%, -14px);
+      }
+      &:after {
+        transform: translate(-50%, 14px);
+      }
+    }
+  }
+
+  label.hamburger {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+    
+    @include tablet {
+      display: none;
+    }
+  }
